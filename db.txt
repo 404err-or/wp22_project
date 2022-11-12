@@ -1,0 +1,7 @@
+create database wp22;
+grant all privileges on wp22.* to wp22@'%';
+grant all privileges on wp22.* to wp22@localhost;
+use wp22
+create table admin( id varchar(50) primary key not null, pw varchar(225) not null, email varchar(20) not null);
+insert into admin (id, pw, email) values ('admin', '1111', '20060@gsa.hs.kr');
+select * from admin;

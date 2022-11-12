@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wp22 cctv</title>
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+
+    <link rel="canonical" href="localhost:5500">
+
+    <link href="bootstrap.css" rel="stylesheet">
+    <meta name="theme-color" content="#7952b3">
+    <script src="jQuery.js"></script>
+    <!-- Custom styles for this template -->
+</head>
+
+<body style="display:flex;flex-direction: column;overflow: hidden;height:100vh;">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background: #007bff;">
+		<a href="/" class="d-flex align-items-center text-white text-decoration-none m-3">wp22</a>
+		<h1 class="text-white">403 cctv<small class="text-white fs-6"> Powered by PI</small>
+		</h1>
+		<div class="text-end">
+			<button type="button" class="btn btn-success me-2" onclick="location='/login'">Login</button>
+		</div>
+	</header>
+    <div class="modal modal-signin position-static d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content rounded-5 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h2 class="fw-bold mb-0">Sign in</h2>
+                </div>
+
+                <div class="modal-body p-5 pt-0">
+                    <form action="/login" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Nickname" name="name" required>
+                            <label for="floatingInput">ID</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" name="password" required>
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button type="submit" class="w-100 mb-2 btn btn-lg rounded-4 btn-primary float-right">Sign in</button>
+                        <div class="row">
+                            <small class="text-muted"><button class="btn float-end" onclick="location.href = '/forget';">forgot password?</button></small>
+                            <small class="text-muted">By clicking Sign in, you agree to the terms of use.</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bootstrap.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

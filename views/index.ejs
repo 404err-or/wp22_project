@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>wp22 cctv</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="bootstrap.css">
+	<style>
+		.form-control-dark {
+			border-color: var(--bs-gray);
+		}
+		.form-control-dark:focus {
+			border-color: #fff;
+			box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+		}
+
+		.text-small {
+			font-size: 85%;
+		}
+
+		.dropdown-toggle {
+			outline: 0;
+		}
+	</style>
+
+	<style type="text/css">
+		#stream {
+			height: 99%;
+			margin: 0px auto;
+			display: block;
+			margin-top: 20px;
+		}
+	</style>
+
+	<!-- jQuery -->
+	<script src="jQuery.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="bootstrap.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<% if(islogin) { %>
+		<script>
+			var socket = io();
+			socket.on('other login', () => {
+				alert('동일 사용자가 로그인하였습니다. 자동 로그아웃됩니다.');
+				location = '/logout';
+			});
+			socket.emit('page', 'index');
+		</script>
+	<% } %>
+</head>
+
+<body>
+	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background: #007bff;">
+		<a href="/" class="d-flex align-items-center text-white text-decoration-none m-3">wp22</a>
+		<h1 class="text-white">403 cctv<small class="text-white fs-6"> Powered by PI</small>
+		</h1>
+		<div class="text-end">
+			<% if(islogin) { %>
+				<button type="button" class="btn btn-success me-2" onclick="location='/logout'"><%=name%> Logout</button>
+			<% } else { %>
+				<button type="button" class="btn btn-success me-2" onclick="location='/login'">Login</button>
+			<% } %>
+		</div>
+	</header>
+
+
+	<div class="container">
+        <div class="text-center">
+			<div class="container">
+				<h1>이 페이지는 Web Programming<br>project를 위해 만들어진<br>CCTV 페이지입니다.</h1>
+			</div>
+			<% if(islogin) { %>
+				<button type="button" class="btn btn-info start text-center" onclick="location='/main'">CCTV</button>
+			<% } else { %>
+				<button type="button" class="btn btn-info start text-center" onclick="location='/login'">로그인하러가기</button>
+			<% } %>
+        </div>
+		<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+			<p>© 2022. 404err-or all rights reserved.</p>
+		</div>
+	</div>
+</body>
+
+</html>
