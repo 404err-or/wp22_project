@@ -1,11 +1,15 @@
 # summary
  This is a CCTV making project with Raspberry Pi created in 2022 web programming.
+
 ***
+
 # why the project started
  * Lesson 403 is taught by an anonymous teacher.
  * It seems that the students are using their laptops to do something else, but there is no mirror in the back of the classroom to check.
  * Therefore, in 403 and 403, we want to make a cctv that can be accessed as a web page using Raspberry Pi.
+
 ***
+
 # needed features
  * camera management
     1. No one can connect in web page. (Teacher only.)
